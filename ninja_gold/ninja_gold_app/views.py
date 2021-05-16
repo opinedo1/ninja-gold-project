@@ -11,3 +11,7 @@ def index(request):
 def process_gold(request):
     if request.method == 'GET':
         return redirect("/")
+
+def reset(request):
+    request.session.clear()
+    return redirect('/')
