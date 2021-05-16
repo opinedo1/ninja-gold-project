@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render, HttpResponse
-
+import random
 
 GOLD_RANGES = {
     "farm": (10,20),
@@ -19,10 +19,18 @@ def index(request):
 def process_gold(request):
     if request.method == 'GET':
         return redirect("/")
+    # checks which box was selected
     selected_building = request.POST['building']
     print("selected building:", selected_building)
+    # assigns range depending on box selected
+    gold_range_for_building = GOLD_RANGES[selected_building]
+    print('gold range: ', gold_range_for_building)
+    # generates random number for that range
+    gold_change = random.randint(gold_range_for_building[0], gold_range_for_building[1])
+    print('gold received: ', gold_change)
+
     return redirect('/')
-    
+
 def reset(request):
     request.session.clear()
     return redirect('/')
