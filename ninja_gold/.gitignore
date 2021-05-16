@@ -158,9 +158,10 @@ Thumbs.db
 .prof
 
 
-# settings file
+# django files to ignore
 settings.py
 *.sqlite3
+__pychache__/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
 ~
