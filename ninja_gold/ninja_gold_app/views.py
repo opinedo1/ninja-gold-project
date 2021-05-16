@@ -11,8 +11,8 @@ GOLD_RANGES = {
 # Create your views here.
 def index(request):
     # sets our inital conditions for our mini game
-    if not "gold" in request.session or "activities" not in request.session:
-        request.session['gold'] = 0
+    if not "gold_bal" in request.session or "activities" not in request.session:
+        request.session['gold_bal'] = 0
         request.session['activities'] = []
     return render(request, "index.html")
 
@@ -28,7 +28,7 @@ def process_gold(request):
     # generates random number for that range
     gold_change = random.randint(gold_range_for_building[0], gold_range_for_building[1])
     print('gold received: ', gold_change)
-
+    request.session['gold_bal'] += gold_change
     return redirect('/')
 
 def reset(request):
