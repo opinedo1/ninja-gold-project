@@ -12,7 +12,6 @@
 </head>
 
     <body>
-
         <div class="container-flush m-3">
 
             <div class="row align-items-center">
@@ -88,17 +87,13 @@
             
 
         </div>
-
-        <div class="container-flush m-3">
+        <div class="container-flush m-3 font-weight-bold">Activities:</div>
+        <div class="container-flush m-3 border border-dark p-2">
             {% comment %}  {% endcomment %}
-            Activities:
-            <div class="row p-2 border border-dark" id="activities">
-
+            {% for line in request.session.activities reversed %}
+                <p class="{{line.result}} m-0">{{ line.msg }}</p>
+            {% endfor %}
             
-            <p class="text-primary"></p>
-
-
-            </div>
         </div>
 
 

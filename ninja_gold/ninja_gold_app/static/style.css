@@ -3,3 +3,14 @@
     color:gold;
     font-size: 24px;
 }
+p.win {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    color: rgb(20, 219, 20);
+}
+
+p.lost {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    color:red;
+}
