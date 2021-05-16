@@ -19,7 +19,10 @@ def index(request):
 def process_gold(request):
     if request.method == 'GET':
         return redirect("/")
-
+    selected_building = request.POST['building']
+    print("selected building:", selected_building)
+    return redirect('/')
+    
 def reset(request):
     request.session.clear()
     return redirect('/')
