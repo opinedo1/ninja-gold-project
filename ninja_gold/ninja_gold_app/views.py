@@ -1,5 +1,13 @@
 from django.shortcuts import redirect, render, HttpResponse
 
+
+GOLD_RANGES = {
+    "farm": (10,20),
+    "cave": (5,10),
+    "house": (2,5),
+    "casino": (0,50)
+}
+
 # Create your views here.
 def index(request):
     # sets our inital conditions for our mini game

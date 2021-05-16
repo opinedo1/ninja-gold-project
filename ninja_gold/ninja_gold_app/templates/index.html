@@ -38,7 +38,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Farm</h5>
                         <p class="card-text">Earns 10-20 gold.</p>
-                        <form action="/gold" method="post">
+                        <form action="/process" method="post">
                             {% csrf_token %}
                             <input type="hidden" name="building" value="farm">
                             <button class="btn btn-primary">Find Gold!</button>
@@ -50,9 +50,9 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Cave</h5>
                         <p class="card-text">Earns 5-10 gold.</p>
-                        <form action="/gold" method="post">
+                        <form action="/process" method="post">
                             {% csrf_token %}
-                            <input type="hidden" name="building" value="farm">
+                            <input type="hidden" name="building" value="cave">
                             <button class="btn btn-primary">Find Gold!</button>
                         </form>
                     </div>
@@ -62,9 +62,9 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">House</h5>
                         <p class="card-text">Earns 2-5 gold.</p>
-                        <form action="/gold" method="post">
+                        <form action="/process" method="post">
                             {% csrf_token %}
-                            <input type="hidden" name="building" value="farm">
+                            <input type="hidden" name="building" value="house">
                             <button class="btn btn-primary">Find Gold!</button>
                         </form>
                     </div>
@@ -73,15 +73,16 @@
                 
                 <div class="card m-2 p-2 col-md" style="width: 18rem;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Gamble</h5>
+                        <h5 class="card-title">Casino</h5>
                         <p class="card-text">Earns/Loses 0-50 gold.</p>
-                        <form action="/gold" method="post">
+                        <form action="/process" method="post">
                             {% csrf_token %}
-                            <input type="hidden" name="building" value="farm">
-                            <button class="btn btn-primary">Find Gold!</button>
+                            <input type="hidden" name="building" value="casino">
+                            <button class="btn btn-primary">Gamble Away!</button>
                         </form>
                     </div>
                 </div>
+
             </div>
             
             
