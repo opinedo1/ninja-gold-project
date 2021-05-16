@@ -20,8 +20,7 @@
                 </h1>
             </div>
 
-            {% comment %}  {% endcomment %}
-
+            {% comment %} Display our current gold. {% endcomment %}
             <div class="row p-2" id="gold">
                     Your Gold: 
                     <div class="font-weight-bold border border-dark ml-4 p-1">{{ request.session.gold_bal }}</div>
@@ -30,8 +29,8 @@
             <a href="/reset"><button class="btn btn-danger">Reset</button></a>        
         </div>
 
+        {% comment %} Boxes for each of the different buildings. {% endcomment %}
         <div class="container m-3">
-
             <div class="row m-0 p-2" >
                 <div class="card m-2 p-2 col-md" style="width: 18rem;">
                     <div class="card-body text-center">
@@ -44,7 +43,6 @@
                         </form>
                     </div>
                 </div>
-
                 <div class="card m-2 p-2 col-md" style="width: 18rem;">
                     <div class="card-body text-center">
                         <h5 class="card-title">Cave</h5>
@@ -56,7 +54,6 @@
                         </form>
                     </div>
                 </div>
-
                 <div class="card m-2 p-2 col-md" style="width: 18rem;">
                     <div class="card-body text-center">
                         <h5 class="card-title">House</h5>
@@ -68,8 +65,6 @@
                         </form>
                     </div>
                 </div>
-
-                
                 <div class="card m-2 p-2 col-md" style="width: 18rem;">
                     <div class="card-body text-center">
                         <h5 class="card-title">Casino</h5>
@@ -81,22 +76,15 @@
                         </form>
                     </div>
                 </div>
-
             </div>
-            
-            
-
         </div>
+        {% comment %} Activity log for our past actions in the game. {% endcomment %}
         <div class="container-flush m-3 font-weight-bold">Activities:</div>
         <div class="container-flush m-3 border border-dark p-2">
-            {% comment %}  {% endcomment %}
             {% for line in request.session.activities reversed %}
                 <p class="{{line.result}} m-0">{{ line.msg }}</p>
             {% endfor %}
-            
         </div>
-
-
     </body>
 
 
